@@ -6,7 +6,7 @@ const HomePage = () => (
     <Header />
     <h1>Home</h1>
     <div>
-      <Link to="/login">Login</Link>
+      <Link to="/consult">Consulta</Link>
     </div>
     <div>
       <Link to="/register">Cadastre-se</Link>

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../components';
 import userActions from '../store/modules/user/user.actions';
 
-const LobbyPage = () => {
+const ConsultPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,4 +33,4 @@ const LobbyPage = () => {
   );
 };
 
-export default LobbyPage;
+export default ConsultPage;
