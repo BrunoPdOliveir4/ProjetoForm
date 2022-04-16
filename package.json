@@ -2,11 +2,16 @@
   "name": "react-base",
   "version": "1.0.0",
   "private": false,
-  "author": {
-    "name": "Vinicius",
-    "email": "vinedfs@outlook.com",
-    "url": "https://github.com/vinesky"
+  "author1": {
+    "name": "Grupo Awari Formulário",
+    "url": "https://github.com/BrunoPdOliveir4"
   },
+  "contributors": [
+    "José Cásio Jaber <jcjaber@gmail.com> (https://github.com/jcjaber)",
+    "Susana Silva <susana_santos@id.uff.br> (https://github.com/susanassilva)",
+    "Ana Carolina Luz <anacarolinaluz@id.uff.br> (https://github.com/Anadev-saga)",
+    "Bruno Pedroso de Oliveira <bpedrosodroliveira10@gmail.com> (https://github.com/BrunoPdOliveir4)"
+  ],
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
