@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": false,
+        "displayName": false
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": false,
+            "displayName": true
+          }
+        ]
+      ]
+    }
+  }
+}
