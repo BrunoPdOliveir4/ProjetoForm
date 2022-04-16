@@ -1,5 +1,5 @@
 import { Controller, useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DefaultInput from '../components/DefaultInput';
 
 const RegisterPage = () => {
@@ -43,17 +43,96 @@ const RegisterPage = () => {
         />
         <Controller
           control={control}
-          name="password"
+          name="Telefone"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="password" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="CEP"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Rua"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Número"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Complemento"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Bairro"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Cidade"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="Estado"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+            );
+          }}
+        />
+        <Controller
+          control={control}
+          name="País"
+          render={({ field }) => {
+            const { name, onChange, value } = field;
+            return (
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
             );
           }}
         />
         <button type="submit">Enviar</button>
       </form>
-      <Link to="/login">Já possui uma conta? Faça o login</Link>
     </div>
   );
 };

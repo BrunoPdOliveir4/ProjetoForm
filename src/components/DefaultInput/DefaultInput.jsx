@@ -1,6 +1,10 @@
-const DefaultInput = ({ name, onChange, value }) => (
+/* eslint-disable jsx-a11y/label-has-associated-control */
+const DefaultInput = ({
+  name, onChange, value, type, maxLength,
+}) => (
   <div>
-    <input name={name} onChange={onChange} value={value} />
+    <label htmlFor={name}>{name}</label>
+    <input name={name} onChange={onChange} value={value} type={type} maxLength={maxLength} />
   </div>
 );
 
