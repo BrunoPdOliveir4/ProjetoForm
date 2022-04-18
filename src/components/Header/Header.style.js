@@ -32,7 +32,10 @@ export const ButtonMenu = styled.button`
     display: block;
   }
 `;
-
+export const StyledA = styled.a`
+  text-decoration:none;
+  color: #000;
+`;
 export const Menu = styled.div`
   display: flex;
 

@@ -1,6 +1,6 @@
 const ErrorPage = () => (
   <div>
-    <h1>Página não existe!</h1>
+    <h1>Página não existe ou você não tem permissão para se conectar a ela!</h1>
   </div>
 );
 

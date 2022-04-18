@@ -32,8 +32,8 @@ const Header = () => {
         <p>Exemplo</p>
       </Style.SideMenu>
       <Style.ButtonMenu type="button" onClick={toggleShowSide}>Menu</Style.ButtonMenu>
-      <Style.Title>TO DO</Style.Title>
-      <p>GitHub</p>
+      <Style.Title>Formulário de Cadastro</Style.Title>
+      <Style.StyledA><a href="https://github.com/BrunoPdOliveir4/ProjetoForm">GitHub</a></Style.StyledA>
     </Style.Wrapper>
   );
 };
