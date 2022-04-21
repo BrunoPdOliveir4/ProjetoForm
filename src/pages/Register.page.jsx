@@ -5,9 +5,17 @@ import DefaultInput from '../components/DefaultInput';
 const RegisterPage = () => {
   const { handleSubmit, control } = useForm({
     defaultValues: {
-      name: 'Vinicius F',
+      nome: 'Vinicius F',
       email: 'teste@teste.com',
-      password: '123',
+      tel: '987121234',
+      cep: '15555000',
+      rua: 'Rua X',
+      numero: '0000',
+      complemento: 'complemento',
+      bairro: 'bairro Y',
+      cidade: 'São Paulo',
+      estado: 'São Paulo',
+      pais: 'Brasil',
     },
   });
 
@@ -23,11 +31,11 @@ const RegisterPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           control={control}
-          name="name"
+          name="nome"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Nome:" />
             );
           }}
         />
@@ -37,97 +45,97 @@ const RegisterPage = () => {
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="email" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="email" label="E-mail:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Telefone"
+          name="tel"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" label="Telefone:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="CEP"
+          name="cep"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" label="CEP:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Rua"
+          name="rua"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Rua:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Número"
+          name="numero"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="number" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="number" label="Número:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Complemento"
+          name="complemento"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Complemento:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Bairro"
+          name="bairro"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Bairro:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Cidade"
+          name="cidade"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Cidade:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="Estado"
+          name="estado"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Estado:" />
             );
           }}
         />
         <Controller
           control={control}
-          name="País"
+          name="pais"
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="text" />
+              <DefaultInput name={name} onChange={onChange} value={value} type="text" label="País:" />
             );
           }}
         />
