@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
+import { clientReducer } from './client';
 import { commonReducer } from './common';
-import { userReducer } from './user';
 
 const reducers = {
   common: commonReducer,
-  user: userReducer,
+  client: clientReducer,
 };
 
 const rootReducer = combineReducers(reducers);

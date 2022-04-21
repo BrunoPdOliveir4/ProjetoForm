@@ -1,8 +1,13 @@
 import { Controller, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import DefaultInput from '../components/DefaultInput';
+import { clientActions } from '../store/modules/client';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const { handleSubmit, control } = useForm({
     defaultValues: {
       nome: 'Vinicius F',
@@ -19,10 +24,13 @@ const RegisterPage = () => {
     },
   });
 
-  const navigate = useNavigate();
-
-  const onSubmit = () => {
-    navigate('/login');
+  const onSubmit = (data) => {
+    const {
+      name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+    } = data;
+    // eslint-disable-next-line max-len
+    dispatch(clientActions.setClient(name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
+    navigate('/');
   };
 
   return (

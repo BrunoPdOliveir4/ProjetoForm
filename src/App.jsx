@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import Router from './components/Router';
-import { userActions } from './store/modules/user';
+import { clientActions } from './store/modules/client';
 import { GlobalStyle } from './styles';
 import { defaultTheme } from './themes';
 
@@ -19,8 +19,11 @@ const App = () => {
 
     // User
     if (localData.user) {
-      const { name, email, password } = localData.user;
-      dispatch(userActions.setUser(name, email, password));
+      const {
+        nome, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+      } = localData.user;
+      // eslint-disable-next-line max-len
+      dispatch(clientActions.setClient(nome, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
     }
   });
 
