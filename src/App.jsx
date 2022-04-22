@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';

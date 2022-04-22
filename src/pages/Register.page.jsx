@@ -8,12 +8,12 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { handleSubmit, control } = useForm({
+  const {register, handleSubmit, setValue, setFocus, control } = useForm({
     defaultValues: {
       nome: 'Vinicius F',
       email: 'teste@teste.com',
       tel: '987121234',
-      cep: '15555000',
+      cep: '15555-000',
       rua: 'Rua X',
       numero: '0000',
       complemento: 'complemento',
@@ -24,14 +24,26 @@ const RegisterPage = () => {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (e) => {
     const {
       name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
-    } = data;
+    } = e;
     // eslint-disable-next-line max-len
     dispatch(clientActions.setClient(name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
     navigate('/');
   };
+
+  const checkCEP = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+      // register({ name: 'address', value: data.logradouro });
+      setValue("rua", data.logradouro);
+      setValue("bairro", data.bairro);
+      setValue("cidade", data.localidade);
+      setValue("estado", data.uf);
+      setFocus("numero");
+    });
+  }
 
   return (
     <div>
@@ -73,7 +85,7 @@ const RegisterPage = () => {
           render={({ field }) => {
             const { name, onChange, value } = field;
             return (
-              <DefaultInput name={name} onChange={onChange} value={value} type="number" label="CEP:" />
+              <input type="number" {...register("cep")} onBlur = {checkCEP}  label="CEP:" />
             );
           }}
         />

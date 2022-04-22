@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const DefaultInput = ({
   name, onChange, value, type, maxLength, label,
