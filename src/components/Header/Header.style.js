@@ -58,3 +58,8 @@ export const SideMenu = styled.div`
     `}
   `}
 `;
+
+export const StyledA = styled.a`
+  text-decoration:none;
+  color: #000;
+`;
