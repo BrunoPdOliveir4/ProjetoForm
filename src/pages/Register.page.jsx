@@ -1,16 +1,35 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import DefaultInput from '../components/DefaultInput';
-import Header from '../components/Header/Header';
 import { clientActions } from '../store/modules/client';
+import Header from '../components/Header/Header';
+
+const maskCel = (value) => value
+  .replace(/\D/g, '')
+  .replace(/(\d{2})(\d)/, '($1) $2')
+  .replace(/(\d{5})(\d)/, '$1-$2')
+  .replace(/(-\d{4})(\d+?)$/, '$1');
+
+const maskPhone = (value) => value
+  .replace(/\D/g, '')
+  .replace(/(\d{2})(\d{1-9})/, '($1) $2')
+  .replace(/(\d{4})(\d)/, '$1-$2')
+  .replace(/(-\d{4})(\d+?)$/, '$1');
+
+const maskCep = (value) => value
+  .replace(/\D/g, '')
+  .replace(/(\d{5})(\d)/, '$1-$2')
+  .replace(/(-\d{3})(\d+?)$/, '$1');
 
 const RegisterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {
-    register, handleSubmit, setValue, setFocus, control,
+    handleSubmit, setValue, setFocus, control,
   } = useForm({
     defaultValues: {
       nome: 'Vinicius F',
@@ -27,18 +46,21 @@ const RegisterPage = () => {
     },
   });
 
-  const onSubmit = (e) => {
+  const onSubmit = (data) => {
     const {
-      name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
-    } = e;
+      name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+    } = data;
     // eslint-disable-next-line max-len
-    dispatch(clientActions.setClient(name, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
+    dispatch(clientActions.setClient(name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
     navigate('/');
   };
+  const [tel, setPhone] = useState('');
+  const [cel, setCel] = useState('');
+  const [cep, setCep] = useState('');
 
   const checkCEP = (e) => {
-    const cep = e.target.value.replace(/\D/g, '');
-    fetch(`https://viacep.com.br/ws/${cep}/json/`).then((res) => res.json()).then((data) => {
+    const codigoPostal = e.target.value.replace(/\D/g, '');
+    fetch(`https://viacep.com.br/ws/${codigoPostal}/json/`).then((res) => res.json()).then((data) => {
       // register({ name: 'address', value: data.logradouro });
       setValue('rua', data.logradouro);
       setValue('bairro', data.bairro);
@@ -47,7 +69,6 @@ const RegisterPage = () => {
       setFocus('numero');
     });
   };
-
   return (
     <>
       <Header />
@@ -76,25 +97,40 @@ const RegisterPage = () => {
           />
           <Controller
             control={control}
-            name="tel"
+            name="cel"
             render={({ field }) => {
-              const { name, onChange, value } = field;
+              const { name } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="number" label="Telefone:" />
+                <DefaultInput name={name} onChange={(e) => setCel(maskCel(e.target.value))} value={cel} label="Celular:" minLength={15} placeholder="(00)00000-0000" required />
               );
             }}
           />
           <Controller
             control={control}
-            name="cep"
+            name="tel"
             render={({ field }) => {
               const { name } = field;
               return (
-                // eslint-disable-next-line react/jsx-props-no-spreading
-                <input name={name} type="number" {...register('cep')} onBlur={checkCEP} label="CEP:" />
+                <DefaultInput name={name} onChange={(e) => setPhone(maskPhone(e.target.value))} value={tel} label="Telefone:" minLength={14} placeholder="(00) 0000-0000" />
               );
             }}
           />
+          <div>
+            <Controller
+              control={control}
+              name="cep"
+              render={({ field }) => {
+                const { name } = field;
+                return (
+                  // eslint-disable-next-line jsx-a11y/label-has-associated-control
+                  <label>
+                    CEP:
+                    <input name={name} onChange={(e) => setCep(maskCep(e.target.value))} onBlur={checkCEP} value={cep} minLength={9} placeholder="00000-000" />
+                  </label>
+                );
+              }}
+            />
+          </div>
           <Controller
             control={control}
             name="rua"
