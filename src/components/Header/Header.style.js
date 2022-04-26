@@ -16,9 +16,12 @@ export const Wrapper = styled.header`
 
 export const Title = styled.h1`
   font-size: 32px;
+  align-items: center;
+  text-align: center;
 `;
 
 export const ButtonMenu = styled.button`
+  font-family: 'Comfortaa', cursive;
   background-color: transparent;
   padding: 0px;
   margin: 0px;

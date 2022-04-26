@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Comfortaa', cursive;
     justify-content: center;
     align-items: center;
   }
@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input[type="button"]{
+    font-family: 'Comfortaa', cursive;
     display: flex;
     position: relative;
     align-items: center;
