@@ -6,7 +6,7 @@ box-sizing:content-box;
 display: grid;
 place-items: center;
 margin: 0;
-padding: 10px 0 15px 0;
+padding: 10px 0 25px 0;
 border: 1px;
 min-width: 100%;
 height: 10vh;
@@ -18,8 +18,9 @@ export const Label = styled.label`
 ${() => css`
 display: inline-block;
 width: 52%;
-padding-left: .2rem .8rem 0 .8rem;
+padding: .2rem .8rem 0 .8rem;
 font-size: 20px;
+margin-top: 20px;
 `
 }
   @media(max-width: 942px) {
@@ -44,7 +45,7 @@ ${() => css`
 display: block;
 width: 50%;
 padding: .5rem .8rem .3rem .8rem;
-margin: .9vw 0 ;
+margin: .10vw 0;
 border-radius: 5px;
 font-size: 20px;
 border-color: navy;

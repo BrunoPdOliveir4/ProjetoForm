@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  body > a {
+  body a {
     display: flex;
     justify-content: center;
     align-items: center;
