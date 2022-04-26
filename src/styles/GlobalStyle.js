@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
-  input[type="button"]{
+  input[type="submit"]{
     font-family: 'Comfortaa', cursive;
     display: flex;
     position: relative;
@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color 500ms ease-in-out;
   }
 
-  input:hover[type="button"]{
+  input:hover[type="submit"]{
     background-color: #1D1297;
   }
 `;

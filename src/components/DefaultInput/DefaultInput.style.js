@@ -19,7 +19,7 @@ export const Label = styled.label`
 ${() => css`
 display: inline-block;
 width: 52%;
-padding: .2rem .8rem 0 .8rem;
+padding: .2rem 0 0 .8rem;
 font-size: 20px;
 `
 }
