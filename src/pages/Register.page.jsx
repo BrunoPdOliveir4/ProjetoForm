@@ -73,6 +73,7 @@ const RegisterPage = () => {
   return (
     <>
       <Header />
+      <h1> Preencha seus dados </h1>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller

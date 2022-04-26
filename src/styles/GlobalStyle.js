@@ -24,7 +24,10 @@ const GlobalStyle = createGlobalStyle`
 
   a:visited {
     color: black;
+  }
 
+  header a:visited {
+    color: white;
   }
 
   input[type="submit"]{
@@ -48,6 +51,11 @@ const GlobalStyle = createGlobalStyle`
 
   input:hover[type="submit"]{
     background-color: #1D1297;
+  }
+
+  p:hover{
+    background-color: #1D5297;
+    color: white;
   }
 `;
 
