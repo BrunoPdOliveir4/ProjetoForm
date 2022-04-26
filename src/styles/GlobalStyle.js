@@ -28,6 +28,28 @@ const GlobalStyle = createGlobalStyle`
     color: black;
 
   }
+
+  input[type="button"]{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    width: 30%;
+    height: 2rem;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    bottom: 0;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #1D5297;
+    transition: background-color 500ms ease-in-out;
+  }
+
+  input:hover[type="button"]{
+    background-color: #1D1297;
+  }
 `;
 
 export default GlobalStyle;
