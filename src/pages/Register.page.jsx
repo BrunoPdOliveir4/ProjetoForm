@@ -32,17 +32,17 @@ const RegisterPage = () => {
     handleSubmit, setValue, setFocus, control,
   } = useForm({
     defaultValues: {
-      nome: 'Vinicius F',
-      email: 'teste@teste.com',
-      tel: '987121234',
-      cep: '15555-000',
-      rua: 'Rua X',
-      numero: '0000',
-      complemento: 'complemento',
-      bairro: 'bairro Y',
-      cidade: 'São Paulo',
-      estado: 'São Paulo',
-      pais: 'Brasil',
+      nome: '',
+      email: '',
+      tel: '',
+      cep: '',
+      rua: '',
+      numero: '',
+      complemento: '',
+      bairro: '',
+      cidade: '',
+      estado: '',
+      pais: '',
     },
   });
 
@@ -122,11 +122,16 @@ const RegisterPage = () => {
               render={({ field }) => {
                 const { name } = field;
                 return (
-                  // eslint-disable-next-line jsx-a11y/label-has-associated-control
-                  <label>
-                    CEP:
-                    <input name={name} onChange={(e) => setCep(maskCep(e.target.value))} onBlur={checkCEP} value={cep} minLength={9} placeholder="00000-000" />
-                  </label>
+                // eslint-disable-next-line jsx-a11y/label-has-associated-control
+                  <DefaultInput
+                    name={name}
+                    onChange={(e) => setCep(maskCep(e.target.value))}
+                    onBlur={checkCEP}
+                    value={cep}
+                    label="Cep:"
+                    minLength={9}
+                    placeholder="00000-000"
+                  />
                 );
               }}
             />
