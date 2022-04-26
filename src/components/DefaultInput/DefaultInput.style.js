@@ -5,12 +5,11 @@ ${() => css`
 box-sizing:content-box;
 display: grid;
 place-items: center;
-margin: 0 auto;
+margin: 0;
 padding: 10px 0 15px 0;
 border: 1px;
 min-width: 100%;
 height: 10vh;
-padding-bottom: 2%;
 /* border: 1px solid red; */
 `
 }
@@ -19,11 +18,27 @@ export const Label = styled.label`
 ${() => css`
 display: inline-block;
 width: 52%;
-padding: .2rem .8rem 0 .8rem;
+padding-left: .2rem .8rem 0 .8rem;
 font-size: 20px;
 `
 }
+  @media(max-width: 942px) {
+  width: 54%;
+  padding: 0;
+  margin: 0;
+  }
+  @media(max-width: 758px) {
+  width: 58%;
+  padding: 0;
+  margin: 0;
+  }
+  @media(max-width: 361px) {
+  width: 62%;
+  padding: 0;
+  margin: 0;
+  }
 `;
+
 export const Input = styled.input`
 ${() => css`
 display: block;
@@ -35,4 +50,15 @@ font-size: 20px;
 border-color: navy;
 `
 }
+  @media(max-width: 942px) {
+  width: 54%;
+  padding: 10px 0;
+  text-indent: 10px;
+  }
+  @media(max-width: 758px) {
+  width: 58%;
+  }
+  @media(max-width: 361px) {
+  width: 62%;
+  }
 `;
