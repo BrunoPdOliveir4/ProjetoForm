@@ -40,6 +40,9 @@ const defaultTheme = {
     modal: 20,
     awaysOnTop: 30,
   },
+  defaultInputTheme: {
+    bold: 900,
+  },
 };
 
 export default defaultTheme;

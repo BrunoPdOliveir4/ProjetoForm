@@ -8,6 +8,25 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  a:visited {
+    color: black;
+
   }
 `;
 
