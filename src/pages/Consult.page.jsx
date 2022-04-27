@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Header, ShowClient } from '../components';
+import DefaultConsulta from '../components/DefaultConsulta';
 
 const ConsultPage = () => {
   const navigate = useNavigate();
@@ -12,13 +13,16 @@ const ConsultPage = () => {
     <div>
       <Header />
       <h1>Consultar clientes</h1>
-      <ShowClient />
+      <form>
+        <DefaultConsulta />
+        <ShowClient />
+      </form>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/register">Registre-se</Link>
         </li>
         <li>
-          <button type="button" onClick={handleLogoutClick}>Sair</button>
+          <input type="button" onClick={handleLogoutClick} value="Sair" />
         </li>
       </ul>
     </div>

@@ -6,18 +6,17 @@ export const Wrapper = styled.header`
     color: white;
     display: flex;
     font-size: 16px;
-    justify-content: center;
-    margin-bottom: 10px;
-    padding: 10px;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 40px;
   `}
 `;
 
 export const Title = styled.h1`
-  font-size: 32px;
-  align-items: center;
   text-align: center;
+  margin-block-start: 0;
+
+
 `;
 
 export const ButtonMenu = styled.button`
@@ -38,6 +37,7 @@ export const ButtonMenu = styled.button`
 
 export const Menu = styled.div`
   display: flex;
+  gap: 20px;
 
   @media (max-width: 922px) {
     display: none;
@@ -65,4 +65,8 @@ export const SideMenu = styled.div`
 export const StyledA = styled.a`
   text-decoration: none;
   color: #000;
+`;
+
+export const StyledSpan = styled.span`
+  padding: 10px 0;
 `;

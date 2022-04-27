@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Comfortaa', cursive;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
 
   a {
@@ -30,15 +31,15 @@ const GlobalStyle = createGlobalStyle`
     color: white;
   }
 
-  input[type="submit"]{
+  input[type="submit"], input[type="button"]{
     font-family: 'Comfortaa', cursive;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
     margin: 40px auto;
-    width: 30%;
-    height: 2rem;
+    width: 15%;
+    height: 2.25rem;
     color: white;
     border: 0;
     border-radius: 5px;
@@ -49,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color 500ms ease-in-out;
   }
 
-  input:hover[type="submit"]{
+  input:hover[type="submit"], input:hover[type="button"]{
     background-color: #1D1297;
   }
 

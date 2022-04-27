@@ -6,14 +6,14 @@ ${() => css`
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  padding: 20px;
+  padding: 20px 0;
   line-height: 50px;
  `
 }`;
 
 export const Paragraph = styled.p`
 ${() => css`
-  border: 2px solid;
+  border: 2px solid silver;
   margin: 20px;
   background-color: #007BC8;
   transition: background-color 500ms ease-in-out;
