@@ -1,17 +1,12 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Header } from '../components';
+import DefaultHome from '../components/DefaultHome';
 
 const HomePage = () => (
-  <div>
+  <>
     <Header />
-    <h1>Home</h1>
-    <div>
-      <Link to="/consult">Consulta</Link>
-    </div>
-    <div>
-      <Link to="/register">Cadastre-se</Link>
-    </div>
-  </div>
+    <DefaultHome />
+  </>
 );
 
 export default HomePage;

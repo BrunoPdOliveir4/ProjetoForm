@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.header`
   ${() => css`
-    background-color: #005CC8;
+    background-color: #005cc8;
     color: white;
     display: flex;
     font-size: 16px;
@@ -16,9 +16,12 @@ export const Wrapper = styled.header`
 
 export const Title = styled.h1`
   font-size: 32px;
+  align-items: center;
+  text-align: center;
 `;
 
 export const ButtonMenu = styled.button`
+  font-family: 'Comfortaa', cursive;
   background-color: transparent;
   padding: 0px;
   margin: 0px;
@@ -28,7 +31,7 @@ export const ButtonMenu = styled.button`
   font-size: 16px;
   cursor: pointer;
 
-  @media(max-width: 922px) {
+  @media (max-width: 922px) {
     display: block;
   }
 `;
@@ -36,7 +39,7 @@ export const ButtonMenu = styled.button`
 export const Menu = styled.div`
   display: flex;
 
-  @media(max-width: 922px) {
+  @media (max-width: 922px) {
     display: none;
   }
 `;
@@ -60,6 +63,6 @@ export const SideMenu = styled.div`
 `;
 
 export const StyledA = styled.a`
-  text-decoration:none;
+  text-decoration: none;
   color: #000;
 `;

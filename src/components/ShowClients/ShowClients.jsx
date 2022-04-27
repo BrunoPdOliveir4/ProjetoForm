@@ -1,52 +1,66 @@
-import { useEffect, useState } from 'react';
-
 const ShowClients = () => {
-  const [currentClients, setCurrentClients] = useState('');
-  const [loading, setLoading] = useState(false);
+  const data = [
+    {
+      bairro: 'Barro 1',
+      cel: '11111111111',
+      cep: '12345789',
+      cidade: 'São Paulo',
+      complemento: 'apto 2',
+      email: 'maria@gmail.com',
+      estado: 'SP',
+      nome: 'Maria',
+      numero: '1111',
+      pais: 'Brasil',
+      rua: 'Rua 1',
+      tel: '11111111',
+    },
+    {
+      bairro: 'Barro 2',
+      cel: '222222222222',
+      cep: '12345789',
+      cidade: 'São Paulo',
+      complemento: 'apto 2',
+      email: 'joao@gmail.com',
+      estado: 'SP',
+      nome: 'João',
+      numero: '1111',
+      pais: 'Brasil',
+      rua: 'Rua 2',
+      tel: '22222222',
+    },
+    {
+      bairro: 'Barro 3',
+      cel: '33333333333',
+      cep: '12345789',
+      cidade: 'São Paulo',
+      complemento: 'apto 3',
+      email: 'jose@gmail.com',
+      estado: 'SP',
+      nome: 'José',
+      numero: '1111',
+      pais: 'Brasil',
+      rua: 'Rua 3',
+      tel: '22222222',
+    },
+  ];
 
-  const url = '';
-  const options = {
-    method: 'GET',
-  };
-
-  const handleResponse = async (response) => {
-    const data = await response.json();
-    console.log(data);
-    setCurrentClients(data);
-  };
-
-  const handleError = () => {
-    console.log('erro!!!');
-  };
-
-  const requestClients = () => {
-    setLoading(true);
-    const request = fetch(url, options);
-    request.then(handleResponse);
-    request.catch(handleError);
-  };
-
-  const handleClick = () => {
-    if (loading) {
-      return;
-    }
-    requestClients();
-  };
-
-  useEffect(() => {
-    requestClients();
-  }, []);
+  const dataMap = data.map((client, index) => {
+    const key = `client-${client}-${index}`;
+    return (
+      <li key={key}>
+        <p>{client.nome}</p>
+        <p>{client.email}</p>
+        <p>{client.cidade}</p>
+      </li>
+    );
+  });
 
   return (
-    <>
-      <div>
-        <h1>Clientes</h1>
-        <div>
-          <div>{currentClients}</div>
-        </div>
-      </div>
-      <button type="button" onClick={handleClick}>Carregar Clientes</button>
-    </>
+    <div>
+      <ul>
+        {dataMap}
+      </ul>
+    </div>
   );
 };
 

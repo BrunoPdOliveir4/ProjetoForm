@@ -32,18 +32,18 @@ const RegisterPage = () => {
     handleSubmit, setValue, setFocus, control,
   } = useForm({
     defaultValues: {
-      nome: 'Vinicius F',
-      email: 'teste@teste.com',
-      cel: '11123451234',
-      tel: '11987121234',
-      cep: '15555000',
-      rua: 'Rua X',
-      numero: '0000',
-      complemento: 'complemento',
-      bairro: 'bairro Y',
-      cidade: 'São Paulo',
-      estado: 'São Paulo',
-      pais: 'Brasil',
+      nome: '',
+      email: '',
+      cel: '',
+      tel: '',
+      cep: '',
+      rua: '',
+      numero: '',
+      complemento: '',
+      bairro: '',
+      cidade: '',
+      estado: '',
+      pais: '',
     },
   });
 
@@ -68,14 +68,15 @@ const RegisterPage = () => {
       setValue('bairro', data.bairro);
       setValue('cidade', data.localidade);
       setValue('estado', data.uf);
+      setValue('pais', 'Brasil');
       setFocus('numero');
     });
   };
   return (
     <>
       <Header />
+      <h1> Preencha seus dados </h1>
       <div>
-        <h1>Cadastro</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             control={control}
@@ -83,7 +84,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Nome:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Nome" />
               );
             }}
           />
@@ -93,7 +94,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="email" label="E-mail:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="email" label="E-mail" />
               );
             }}
           />
@@ -103,7 +104,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name } = field;
               return (
-                <DefaultInput name={name} onChange={(e) => setCel(maskCel(e.target.value))} value={cel} label="Celular:" minLength={15} placeholder="(00)00000-0000" required />
+                <DefaultInput name={name} onChange={(e) => setCel(maskCel(e.target.value))} value={cel} label="Celular" minLength={15} placeholder="(00)00000-0000" required />
               );
             }}
           />
@@ -113,7 +114,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name } = field;
               return (
-                <DefaultInput name={name} onChange={(e) => setPhone(maskPhone(e.target.value))} value={tel} label="Telefone:" minLength={14} placeholder="(00) 0000-0000" />
+                <DefaultInput name={name} onChange={(e) => setPhone(maskPhone(e.target.value))} value={tel} label="Telefone" minLength={14} placeholder="(00) 0000-0000" />
               );
             }}
           />
@@ -124,11 +125,16 @@ const RegisterPage = () => {
               render={({ field }) => {
                 const { name } = field;
                 return (
-                  // eslint-disable-next-line jsx-a11y/label-has-associated-control
-                  <label>
-                    CEP:
-                    <input name={name} onChange={(e) => setCep(maskCep(e.target.value))} onBlur={checkCEP} value={cep} minLength={9} placeholder="00000-000" />
-                  </label>
+                // eslint-disable-next-line jsx-a11y/label-has-associated-control
+                  <DefaultInput
+                    name={name}
+                    onChange={(e) => setCep(maskCep(e.target.value))}
+                    onBlur={checkCEP}
+                    value={cep}
+                    label="CEP"
+                    minLength={9}
+                    placeholder="00000-000"
+                  />
                 );
               }}
             />
@@ -139,7 +145,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Rua:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Rua" />
               );
             }}
           />
@@ -149,7 +155,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="number" label="Número:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="number" label="Número" />
               );
             }}
           />
@@ -159,7 +165,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Complemento:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Complemento" />
               );
             }}
           />
@@ -169,7 +175,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Bairro:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Bairro" />
               );
             }}
           />
@@ -179,7 +185,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Cidade:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Cidade" />
               );
             }}
           />
@@ -189,7 +195,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Estado:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Estado" />
               );
             }}
           />
@@ -199,11 +205,11 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="País:" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="País" />
               );
             }}
           />
-          <button type="submit">Enviar</button>
+          <input type="submit" value="Enviar" />
         </form>
       </div>
     </>

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Header } from '../components';
+import { Header, ShowClient } from '../components';
 
 const ConsultPage = () => {
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ const ConsultPage = () => {
     <div>
       <Header />
       <h1>Consultar clientes</h1>
+      <ShowClient />
       <ul>
         <li>
           <Link to="/">Home</Link>
