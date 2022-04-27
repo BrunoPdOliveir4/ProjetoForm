@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import * as Style from './Header.style';
 
 const Header = () => {
@@ -25,11 +26,15 @@ const Header = () => {
   return (
     <Style.Wrapper>
       <Style.Menu>
-        <p>Link 1</p>
-        <p>Link 2</p>
+        <Link to="/">
+          <Style.StyledSpan>Home</Style.StyledSpan>
+        </Link>
+        <Link to="/consult">
+          <Style.StyledSpan>Consulta</Style.StyledSpan>
+        </Link>
       </Style.Menu>
       <Style.SideMenu showSideMenu={showSideMenu}>
-        <p>Exemplo</p>
+        <Link to="/"><p>Home </p></Link>
       </Style.SideMenu>
       <Style.ButtonMenu type="button" onClick={toggleShowSide}>Menu</Style.ButtonMenu>
       <Style.Title>Formulário de Cadastro</Style.Title>
