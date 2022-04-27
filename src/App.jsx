@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import Router from './components/Router';
+// eslint-disable-next-line import/named
 import { clientActions } from './store/modules/client';
 import { GlobalStyle } from './styles';
+// eslint-disable-next-line import/named
 import { defaultTheme } from './themes';
 
 const App = () => {

@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+// eslint-disable-next-line import/named
 import { clientReducer } from './client';
 import { commonReducer } from './common';
 

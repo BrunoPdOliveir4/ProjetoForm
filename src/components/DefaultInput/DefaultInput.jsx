@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-len */
+
 const DefaultInput = ({
   name, onChange, onBlur, value, type, label, required, placeholder, minLength,
 }) => (
