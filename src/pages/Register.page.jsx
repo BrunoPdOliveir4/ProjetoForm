@@ -34,8 +34,9 @@ const RegisterPage = () => {
     defaultValues: {
       nome: 'Vinicius F',
       email: 'teste@teste.com',
-      tel: '987121234',
-      cep: '15555-000',
+      cel: '11123451234',
+      tel: '11987121234',
+      cep: '15555000',
       rua: 'Rua X',
       numero: '0000',
       complemento: 'complemento',
@@ -48,10 +49,11 @@ const RegisterPage = () => {
 
   const onSubmit = (data) => {
     const {
-      name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+      nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
     } = data;
+    console.log(data);
     // eslint-disable-next-line max-len
-    dispatch(clientActions.setClient(name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
+    dispatch(clientActions.setClient(nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
     navigate('/');
   };
   const [tel, setPhone] = useState('');
