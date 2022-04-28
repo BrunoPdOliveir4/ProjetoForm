@@ -56,11 +56,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: #1D1297;
   }
 
-  p:hover{
-    background-color: #1D5297;
-    color: white;
+  li {
+    list-style: none;
   }
-
   .title-page{
     padding: 40px 60px;
   }
