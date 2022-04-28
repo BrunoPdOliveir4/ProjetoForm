@@ -18,8 +18,40 @@ const ShowClients = () => {
             {client.email}
           </Style.Paragraph>
           <Style.Paragraph>
+            Celular:&nbsp;
+            {client.cel}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Telefone:&nbsp;
+            {client.tel}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Cep:&nbsp;
+            {client.cep}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Rua:&nbsp;
+            {client.rua}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Numero:&nbsp;
+            {client.numero}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Complemento:&nbsp;
+            {client.complemento}
+          </Style.Paragraph>
+          <Style.Paragraph>
             Cidade:&nbsp;
             {client.cidade}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Bairro:&nbsp;
+            {client.bairro}
+          </Style.Paragraph>
+          <Style.Paragraph>
+            Estado:&nbsp;
+            {client.estado}
           </Style.Paragraph>
         </li>
       </Style.Div>
