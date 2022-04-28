@@ -34,6 +34,7 @@ const RegisterPage = () => {
     defaultValues: {
       nome: '',
       email: '',
+      cel: '',
       tel: '',
       cep: '',
       rua: '',
@@ -48,10 +49,11 @@ const RegisterPage = () => {
 
   const onSubmit = (data) => {
     const {
-      name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+      nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
     } = data;
+    console.log(data);
     // eslint-disable-next-line max-len
-    dispatch(clientActions.setClient(name, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
+    dispatch(clientActions.setClient(nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
     navigate('/');
   };
   const [tel, setPhone] = useState('');

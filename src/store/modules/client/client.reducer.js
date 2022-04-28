@@ -5,12 +5,13 @@ const clientReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_CLIENT': {
       const {
-        nome, email, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+        nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
       } = action.payload;
 
       return {
         nome,
         email,
+        cel,
         tel,
         cep,
         rua,

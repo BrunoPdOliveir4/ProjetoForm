@@ -1,7 +1,5 @@
-/* eslint-disable react/no-this-in-sfc */
-/* eslint-disable react/jsx-no-comment-textnodes */
-import { useNavigate, Link } from 'react-router-dom';
-import { Header } from '../components';
+import { Link, useNavigate } from 'react-router-dom';
+import { Header, ShowClient } from '../components';
 import DefaultConsulta from '../components/DefaultConsulta';
 
 const ConsultPage = () => {
@@ -17,6 +15,7 @@ const ConsultPage = () => {
       <h1 className="title-page">Consultar clientes</h1>
       <form>
         <DefaultConsulta />
+        <ShowClient />
       </form>
       <ul>
         <li>
