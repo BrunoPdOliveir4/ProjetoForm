@@ -24,4 +24,26 @@ O formulário consiste em onze peguntas padrões para um registro básico(sem se
     <li> Estado </li>
     <li><s>Pais</s> (acabamos tirando)</li>
   </ul>
-  
+</form>
+
+## O envio dos dados
+
+A function onSubmit do formulário armazena as informações pelo dispatch(clientActions.seClient(client)); e esse "client" será puxado na página showClients
+
+--Form onSubmit
+
+` const onSubmit = (data) => {
+    const client = data;
+    dispatch(clientActions.setClient(client));
+    navigate('/');
+};` 
+
+
+--show clients
+
+
+` const ShowClients = () => {
+  const data = useSelector((state) => state.client);
+  console.log(data[0]);
+  const dataMap = data.map((client, index) => {
+    const key = 'client-${client}-${index}'; `
