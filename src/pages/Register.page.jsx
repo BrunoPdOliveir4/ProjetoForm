@@ -43,17 +43,34 @@ const RegisterPage = () => {
       bairro: '',
       cidade: '',
       estado: '',
-      pais: '',
     },
   });
 
   const onSubmit = (data) => {
     const {
-      nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
+      nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado,
     } = data;
     console.log(data);
+    /* fetch(':3001/registro', {
+      method: 'POST',
+      body: JSON.stringify({
+        nome: data.nome,
+        email: data.email,
+        cel: data.cel,
+        tel: data.tel,
+        cep: data.cep,
+        rua: data.rua,
+        numero: data.numero,
+        complemento: data.complemento,
+        bairro: data.bairro,
+        cidade: data.cidade,
+        estado: data.estado,
+      }),
+    }).then((resposta) => {
+      console.log(resposta);
+    }); */
     // eslint-disable-next-line max-len
-    dispatch(clientActions.setClient(nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais));
+    dispatch(clientActions.setClient(nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado));
     navigate('/');
   };
   const [tel, setPhone] = useState('');
@@ -196,16 +213,6 @@ const RegisterPage = () => {
               const { name, onChange, value } = field;
               return (
                 <DefaultInput name={name} onChange={onChange} value={value} type="text" label="Estado" />
-              );
-            }}
-          />
-          <Controller
-            control={control}
-            name="pais"
-            render={({ field }) => {
-              const { name, onChange, value } = field;
-              return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="text" label="País" />
               );
             }}
           />
