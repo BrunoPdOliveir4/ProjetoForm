@@ -73,8 +73,8 @@ const RegisterPage = () => {
   return (
     <>
       <Header />
-      <h1> Preencha seus dados </h1>
-      <div>
+      <h1 className="title-page"> Preencha seus dados </h1>
+      <div className="container-register">
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             control={control}
@@ -103,6 +103,7 @@ const RegisterPage = () => {
               const { name } = field;
               return (
                 <DefaultInput name={name} onChange={(e) => setCel(maskCel(e.target.value))} value={cel} label="Celular" minLength={15} placeholder="(00)00000-0000" required />
+
               );
             }}
           />

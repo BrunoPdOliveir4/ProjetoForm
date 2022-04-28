@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0px;
     padding: 0px;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -37,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     align-items: center;
     justify-content: center;
+    top: -20px;
     margin: 40px auto;
     width: 15%;
     height: 2.25rem;
@@ -57,6 +59,17 @@ const GlobalStyle = createGlobalStyle`
   p:hover{
     background-color: #1D5297;
     color: white;
+  }
+
+  .title-page{
+    padding: 40px 60px;
+  }
+
+  .container-register {
+   background-color: #F7F7F7;
+   border-radius: 20px;
+   width: 50%;
+   margin: 0 auto;
   }
 `;
 

@@ -17,24 +17,24 @@ height: 10vh;
 export const Label = styled.label`
 ${() => css`
 display: inline-block;
-width: 52%;
+width: 54%;
 padding: .2rem .8rem 0 .8rem;
 font-size: 20px;
 margin-top: 20px;
 `
 }
   @media(max-width: 942px) {
-  width: 54%;
-  padding: 0;
-  margin: 0;
-  }
-  @media(max-width: 758px) {
   width: 58%;
   padding: 0;
   margin: 0;
   }
+  @media(max-width: 758px) {
+  width: 60%;
+  padding: 0;
+  margin: 0;
+  }
   @media(max-width: 361px) {
-  width: 62%;
+  width: 64%;
   padding: 0;
   margin: 0;
   }
