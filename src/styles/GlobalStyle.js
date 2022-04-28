@@ -69,6 +69,28 @@ const GlobalStyle = createGlobalStyle`
    width: 50%;
    margin: 0 auto;
   }
-`;
 
+.inputmask {
+  display: block;
+  width: 50%;
+  padding: .5rem .8rem .3rem .8rem;
+  margin: .10vw 0;
+  border-radius: 5px;
+  font-size: 20px;
+  border-color: navy;
+
+    @media(max-width: 942px) {
+    width: 54%;
+    padding: 10px 0;
+    text-indent: 10px;
+    }
+    @media(max-width: 758px) {
+    width: 58%;
+    }
+    @media(max-width: 361px) {
+    width: 62%;
+    }
+  }
+
+`;
 export default GlobalStyle;

@@ -6,18 +6,8 @@ import { useState } from 'react';
 import DefaultInput from '../components/DefaultInput';
 import { clientActions } from '../store/modules/client';
 import Header from '../components/Header/Header';
-
-const maskCel = (value) => value
-  .replace(/\D/g, '')
-  .replace(/(\d{2})(\d)/, '($1) $2')
-  .replace(/(\d{5})(\d)/, '$1-$2')
-  .replace(/(-\d{4})(\d+?)$/, '$1');
-
-const maskPhone = (value) => value
-  .replace(/\D/g, '')
-  .replace(/(\d{2})(\d{1-9})/, '($1) $2')
-  .replace(/(\d{4})(\d)/, '$1-$2')
-  .replace(/(-\d{4})(\d+?)$/, '$1');
+import InputMaskCel from '../components/InputMaskCel';
+import InputMaskTel from '../components/InputMaskTel';
 
 const maskCep = (value) => value
   .replace(/\D/g, '')
@@ -71,8 +61,7 @@ const RegisterPage = () => {
     dispatch(clientActions.setClient(client));
     navigate('/');
   };
-  const [tel, setPhone] = useState('');
-  const [cel, setCel] = useState('');
+
   const [cep, setCep] = useState('');
 
   const checkCEP = (e) => {
@@ -109,7 +98,7 @@ const RegisterPage = () => {
             render={({ field }) => {
               const { name, onChange, value } = field;
               return (
-                <DefaultInput name={name} onChange={onChange} value={value} type="email" label="E-mail" />
+                <DefaultInput name={name} onChange={onChange} value={value} type="email" label="E-mail" required />
               );
             }}
           />
@@ -117,9 +106,9 @@ const RegisterPage = () => {
             control={control}
             name="cel"
             render={({ field }) => {
-              const { name } = field;
+              const { name, value, onChange } = field;
               return (
-                <DefaultInput name={name} onChange={(e) => setCel(maskCel(e.target.value))} value={cel} label="Celular" minLength={15} placeholder="(00)00000-0000" required />
+                <InputMaskCel name={name} value={value} onChange={onChange} required />
 
               );
             }}
@@ -128,9 +117,9 @@ const RegisterPage = () => {
             control={control}
             name="tel"
             render={({ field }) => {
-              const { name } = field;
+              const { name, value, onChange } = field;
               return (
-                <DefaultInput name={name} onChange={(e) => setPhone(maskPhone(e.target.value))} value={tel} label="Telefone" minLength={14} placeholder="(00) 0000-0000" />
+                <InputMaskTel name={name} value={value} onChange={onChange} required />
               );
             }}
           />
