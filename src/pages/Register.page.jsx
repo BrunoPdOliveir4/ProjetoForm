@@ -47,9 +47,7 @@ const RegisterPage = () => {
   });
 
   const onSubmit = (data) => {
-    const {
-      nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado,
-    } = data;
+    const client = data;
     console.log(data);
     /* fetch(':3001/registro', {
       method: 'POST',
@@ -70,7 +68,7 @@ const RegisterPage = () => {
       console.log(resposta);
     }); */
     // eslint-disable-next-line max-len
-    dispatch(clientActions.setClient(nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado));
+    dispatch(clientActions.setClient(client));
     navigate('/');
   };
   const [tel, setPhone] = useState('');

@@ -1,27 +1,12 @@
-const initialState = null;
+const initialState = [];
 
 // eslint-disable-next-line default-param-last
 const clientReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_CLIENT': {
-      const {
-        nome, email, cel, tel, cep, rua, numero, complemento, bairro, cidade, estado, pais,
-      } = action.payload;
+      const { client } = action.payload;
 
-      return {
-        nome,
-        email,
-        cel,
-        tel,
-        cep,
-        rua,
-        numero,
-        complemento,
-        bairro,
-        cidade,
-        estado,
-        pais,
-      };
+      return [...state, client];
     }
     default:
       return state;
