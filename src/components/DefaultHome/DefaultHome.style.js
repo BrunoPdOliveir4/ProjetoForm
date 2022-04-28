@@ -19,6 +19,11 @@ ${() => css`
   transition: background-color 500ms ease-in-out;
   padding: 0 20px;
   border-radius: 8px;
+
+  &:hover{
+    background-color: #1D5297;
+    color: white;
+  }
 `
 }`;
 

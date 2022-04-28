@@ -37,7 +37,7 @@ export const ButtonMenu = styled.button`
 
 export const Menu = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 16px;
 
   @media (max-width: 922px) {
     display: none;

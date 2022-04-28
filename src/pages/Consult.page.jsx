@@ -12,7 +12,7 @@ const ConsultPage = () => {
   return (
     <div>
       <Header />
-      <h1>Consultar clientes</h1>
+      <h1 className="title-page">Consultar clientes</h1>
       <form>
         <DefaultConsulta />
         <ShowClient />
